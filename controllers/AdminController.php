@@ -30,23 +30,13 @@ class AdminController extends core\Controller
 
 	/**
 	 * Init menu item and index page for plugin
-	 * 
-	 * @changed 2023-01-22 Thomas Fellinger
-	 * 
-	 * Moved add_options_page() to add_menu_page() because other tabs are initialised
-	 * with add_submenu_page() which implicates a menu page or Errors
-	 *  
-	 * @added $menu_title 2023-01-22  Thomas Fellinger
-	 * 
-	 * $menu_title will be in one line in the menu
 	 */
 	public function adminMenu()
 	{
 		$page_title = \JustCustomFields::$pluginName;
-		$menu_title = __('Custom Fields', \JustCustomFields::TEXTDOMAIN);
 		$page_slug = \JustCustomFields::$pluginSlug;
 
-		add_menu_page($page_title, $menu_title, 'manage_options', 'jcf_admin', array( $this, 'actionIndex' ), 'dashicons-welcome-widgets-menus');
+		add_options_page($page_title, $page_title, 'manage_options', 'jcf_admin', array( $this, 'actionIndex' ));
 	}
 
 	/**
@@ -77,7 +67,7 @@ class AdminController extends core\Controller
 		wp_register_script(
 			$slug,
 			jcf_plugin_url('assets/just_custom_fields.js'),
-			array( 'jquery', 'json2', 'jquery-form', 'jquery-ui-sortable', 'jquery-migrate' )
+			array( 'jquery', 'json2', 'jquery-form', 'jquery-ui-sortable' )
 		);
 		wp_enqueue_script($slug);
 		wp_enqueue_script('jquery-ui-autocomplete');
@@ -113,10 +103,11 @@ class AdminController extends core\Controller
 		wp_register_script(
 			'jcf_edit_post',
 				jcf_plugin_url('assets/edit_post.js'),
-				array( 'jquery', 'tags-box', 'jquery-migrate' )
+				array( 'jquery', 'tags-box' )
 		);
 
 		wp_register_style('jcf_edit_post', jcf_plugin_url('assets/edit_post.css'));
 	}
 
 }
+

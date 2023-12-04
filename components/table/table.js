@@ -24,3 +24,4 @@ jQuery(document).ready(function() {
     jQuery(this).find('tbody').sortable({containment: jQuery(this), scroll: false, items: 'tr[class!=table-header]'});
   });
 });
+

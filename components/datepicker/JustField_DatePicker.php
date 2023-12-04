@@ -87,7 +87,7 @@ class JustField_DatePicker extends core\JustField
 	{
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		$instance['show_monthes'] = isset($new_instance['show_monthes']) ? (int) @$new_instance['show_monthes'] : 0;
+		$instance['show_monthes'] = (int) @$new_instance['show_monthes'];
 		$instance['date_format'] = @$new_instance['date_format'];
 		return $instance;
 	}

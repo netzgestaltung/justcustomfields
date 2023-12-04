@@ -1,42 +1,20 @@
 var jcf_relatedcontent_max_index = 0;
 var jcf_relatedcontent_inited = false;
 var jcf_post_body_content_container = '#post-body';
-var jcf_block_editor_timeout;
+if ( jQuery('body').hasClass('edit-tags-php') ) {
+  jcf_post_body_content_container = '#addtag';
+} else if ( jQuery('body').hasClass('term-php') ) {
+  jcf_post_body_content_container = '#edittag';
+}
 
 jQuery(document).ready(function() {
-  if ( jQuery('body').hasClass('edit-tags-php') ) {
-    jcf_post_body_content_container = '#addtag';
-  } else if ( jQuery('body').hasClass('term-php') ) {
-    jcf_post_body_content_container = '#edittag';
-  } else if ( jQuery('body').hasClass('block-editor-page') ) {
-    jcf_post_body_content_container = '#editor';
-  }
-  
-  if ( jQuery('body').hasClass('block-editor-page') ) {
-    jcf_block_editor_ready(jcf_relatedcontent_init);
-  } else {
-    jcf_relatedcontent_init();
-  }
+
+  jcf_relatedcontent_init();
 
   // add collection hook integration
   jcf_add_action('collection_row_added', 'init_relatedcontent', jcf_relatedcontent_collection_init);
 
 });
-
-function jcf_block_editor_ready(callback) {
-  jcf_block_editor_timeout = clearTimeout(jcf_block_editor_timeout);
-  if ( wp.data.select('core/editor').__unstableIsEditorReady() ) {
-    console.log('jcf: WP Block Editor Ready');
-    if ( callback && typeof callback === 'function' ) {
-      callback();
-    }
-  } else {
-    console.log('jcf: wait for WP Block Editor');
-    timeout = setTimeout(function(){
-      jcf_block_editor_ready(callback);
-    }, 15);
-  }
-}
 
 function jcf_relatedcontent_collection_init() {
   jcf_relatedcontent_init();
@@ -44,7 +22,6 @@ function jcf_relatedcontent_collection_init() {
 
 function jcf_relatedcontent_init() {
   var node = jQuery(jcf_post_body_content_container);
-  
   if ( node.find('div.jcf-relatedcontent-field').size() == 0 || jcf_relatedcontent_inited )
     return;
 
@@ -73,7 +50,7 @@ function jcf_relatedcontent_init() {
   // add more button
   node.find('div.jcf-relatedcontent-field a.jcf_add_more').on('click', function() {
     var container = jQuery(this).parent();
-    
+
     jcf_relatedcontent_max_index++;
     var new_html = container.find('div.jcf-relatedcontent-row:first').html();
     new_html = new_html
@@ -145,3 +122,4 @@ function jcf_relatedcontent_init_sortable(node) {
     },
   });
 }
+

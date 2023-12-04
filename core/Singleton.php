@@ -57,7 +57,7 @@ class Singleton
 	 *
 	 * @return void
 	 */
-	public function __wakeup()
+	private function __wakeup()
 	{
 	}
 

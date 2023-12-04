@@ -19,17 +19,11 @@ class ImportExportController extends core\Controller
 
 	/**
 	 * Init routes for import/export page
-	 * 
-	 * @added $parent_slug 2023-01-22  Thomas Fellinger
-	 * 
-	 * $parent_slug will render the right page
-	 * using null or '' for parent page creates PHP 8 errors.
 	 */
 	public function initRoutes()
 	{
 		$page_title = __('Import/Export', \JustCustomFields::TEXTDOMAIN);
-		$parent_slug = 'jcf_admin';
-		add_submenu_page($parent_slug, $page_title, $page_title, 'manage_options', 'jcf_import_export', array( $this, 'actionIndex' ));
+		add_submenu_page(null, $page_title, $page_title, 'manage_options', 'jcf_import_export', array( $this, 'actionIndex' ));
 	}
 
 	/**

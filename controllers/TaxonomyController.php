@@ -207,7 +207,7 @@ class TaxonomyController extends core\Controller
 		wp_register_script(
 			'jcf_edit_taxonomy',
 			jcf_plugin_url('assets/edit_taxonomy.js'),
-			array( 'jquery', 'jquery-migrate' )
+			array( 'jquery' )
 		);
 		wp_enqueue_script('jcf_edit_taxonomy');
 	}
@@ -256,4 +256,5 @@ class TaxonomyController extends core\Controller
 		<?php
 	}
 }
+
 
