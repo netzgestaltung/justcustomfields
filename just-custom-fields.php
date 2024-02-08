@@ -1,12 +1,24 @@
 <?php
 /*
-Plugin Name: Just Custom Fields for Wordpress
-Plugin URI: http://justcoded.com/blog/just-custom-fields-for-wordpress-plugin/
-Description: Turn WordPress into more powerful CMS by adding advanced and easy to use custom fields. Read the documentation on http://justcustomfields.com.
-Tags: custom, fields, custom fields, meta, post meta, object meta, editor, custom gallery, collection, field group, metabox, fieldsets
-Author: JustCoded / Alex Prokopenko
-Author URI: http://justcoded.com/
-Version: 3.4.0
+ * Plugin Name:     Just Custom Fields for Wordpress
+ * Plugin URI:      https://wordpress.org/plugins/just-custom-fields/
+ * Description:     Turn WordPress into more powerful CMS by adding advanced and easy to use custom fields. Read the documentation on http://justcustomfields.com.
+ * Tags:            custom, fields, custom fields, meta, post meta, object meta, editor, custom gallery, collection, field group, metabox, fieldsets
+ * Author:          Thomas Fellinger origin by JustCoded / Alex Prokopenko
+ * Author URI:      https://netzgestaltung.at
+ * Version:         3.4.0
+ * License:         GPL v2
+ * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/** origin of the plugin
+# Plugin Name: Just Custom Fields for Wordpress
+# Plugin URI: http://justcoded.com/blog/just-custom-fields-for-wordpress-plugin/
+# Description: Turn WordPress into more powerful CMS by adding advanced and easy to use custom fields. Read the documentation on http://justcustomfields.com.
+# Tags: custom, fields, custom fields, meta, post meta, object meta, editor, custom gallery, collection, field group, metabox, fieldsets
+# Author: JustCoded / Alex Prokopenko / netzgestaltung.at
+# Author URI: http://justcoded.com/
+# Version: 3.3.2
 */
 define('JCF_ROOT', dirname(__FILE__));
 require_once( JCF_ROOT.'/core/Autoload.php' );
