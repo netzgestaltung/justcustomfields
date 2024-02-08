@@ -1,18 +1,19 @@
 <?php
 /*
- * Plugin Name:     Just Custom Fields for Wordpress
- * Plugin URI:      https://wordpress.org/plugins/just-custom-fields/
- * Description:     Turn WordPress into more powerful CMS by adding advanced and easy to use custom fields. Read the documentation on http://justcustomfields.com.
- * Tags:            custom, fields, custom fields, meta, post meta, object meta, editor, custom gallery, collection, field group, metabox, fieldsets
- * Author:          Thomas Fellinger origin by JustCoded / Alex Prokopenko
- * Author URI:      https://netzgestaltung.at
- * Version:         3.4.0
- * License:         GPL v2
- * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin Name:       Just Custom Fields for WordPress
+ * Plugin URI:        https://wordpress.org/plugins/just-custom-fields/
+ * Description:       Turn WordPress into more powerful CMS by adding advanced and easy to use custom fields. Read the documentation on http://justcustomfields.com.
+ * Tags:              custom, fields, custom fields, meta, post meta, object meta, editor, custom gallery, collection, field group, metabox, fieldsets
+ * Author:            Thomas Fellinger origin by JustCoded / Alex Prokopenko
+ * Author URI:        https://netzgestaltung.at
+ * Version:           3.4.0
+ * License:           GPL v2
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       just-custom-fields
  */
 
 /** origin of the plugin
-# Plugin Name: Just Custom Fields for Wordpress
+# Plugin Name: Just Custom Fields for WordPress
 # Plugin URI: http://justcoded.com/blog/just-custom-fields-for-wordpress-plugin/
 # Description: Turn WordPress into more powerful CMS by adding advanced and easy to use custom fields. Read the documentation on http://justcustomfields.com.
 # Tags: custom, fields, custom fields, meta, post meta, object meta, editor, custom gallery, collection, field group, metabox, fieldsets
@@ -34,7 +35,7 @@ class JustCustomFields extends core\Singleton
 	 * Plugin text domain for translations
 	 */
 	const TEXTDOMAIN = 'just-custom-fields';
-	const VERSION = '3.301';
+	const VERSION = '3.4.0';
 
 	/**
 	 * Textual plugin name
