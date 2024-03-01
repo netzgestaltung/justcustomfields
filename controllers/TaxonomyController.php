@@ -26,7 +26,8 @@ class TaxonomyController extends core\Controller
 			add_action( $this->_taxonomy . '_add_form_fields', array($this, 'actionRender'), 10, 2 );
 		}
 
-		add_action( 'edit_terms', array($this, 'saveCustomFields'), 10, 3 );
+		add_action( 'edit_terms', array('jcf\controllers\TaxonomyController', 'saveCustomFields'), 10, 3 );
+		add_action( 'edit_term', array('jcf\controllers\TaxonomyController', 'saveCustomFields'), 10, 3 );
 		add_action( 'create_term', array($this, 'saveCustomFields'), 10, 3 );
 
 		add_action( 'wp_ajax_jcf_ajax_get_taxonomy_custom_fields', array($this, 'ajaxRenderFields') );
